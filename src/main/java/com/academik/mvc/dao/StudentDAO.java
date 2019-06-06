@@ -59,7 +59,8 @@ public class StudentDAO implements GeneralDAO<Student> {
             //"SELECT * FROM student WHERE last_name = 'O';DROP TABLE student;--connor'"
             //Esto es usando PreparedStatement
             //"SELECT * FROM student WHERE code = ?"            
-            PreparedStatement stmnt = conn.prepareStatement("SELECT code, first_name, last_name, gender, email, contact_phone, guardian, birthday FROM student WHERE code = ?");
+            PreparedStatement stmnt = conn.prepareStatement("SELECT code, first_name, "
+                    + "last_name, gender, email, contact_phone, guardian, birthday FROM student WHERE code = ?");
             stmnt.setLong(1, id);
 
             ResultSet result = stmnt.executeQuery();
